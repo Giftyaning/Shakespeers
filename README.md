@@ -18,7 +18,8 @@ https://github.com/Giftyaning/Project-2 <br>
 Live Page Link
 
 ## Images
-
+![Alt Logo](./logo.png)
+![Alt Happy Shakespeare](./happ-speare.png)
 ## Table of Contents
 * [Installation](#installation)
 * [Useage](#useage)
