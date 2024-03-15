@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
+import plays from '../../data/plays.js'
 import './style.css'
 import {
   MDBCard,
@@ -9,26 +10,34 @@ import {
   MDBRow,
   MDBTypography,
 } from "mdb-react-ui-kit";
-import quotes from '../../data/quotes.json'
 
-function Quote() {
-  const [quote, setQuote] = useState({
-    "quote": "Test",
-    "book": 'Test'
-  })
+
+
+const Quote = () => {
+  const [quote, setQuote] = useState('');
 
   const generateQuote = () => {
-    const randomQuote = quotes[Math.floor(Math.random() * (5))]
-    const { quote, book } = randomQuote
-    setQuote({
-      "quote": quote, 
-      "book": book
-    })
-  }
+    if (plays.length === 0) {
+      console.error('No plays data available.');
+      return;
+    }
 
-  useEffect(() => {
-    generateQuote()
-  }, [])
+    const randomPlayIndex = Math.floor(Math.random() * plays.length);
+    const randomPlay = plays[randomPlayIndex];
+    const randomPlayName = randomPlay.name
+
+    if (!randomPlay.quotes || randomPlay.quotes.length === 0) {
+      console.error('No quotes available for the selected play.');
+      return;
+    }
+
+    const randomQuoteIndex = Math.floor(Math.random() * randomPlay.quotes.length);
+    const selectedQuote = randomPlay.quotes[randomQuoteIndex];
+    setQuote({
+      "quote":selectedQuote,
+      "play":randomPlayName
+    });
+        };
 
 
   return (
@@ -46,21 +55,21 @@ function Quote() {
                     <MDBIcon fas icon="quote-left text-white" />
                   </div>
                   <p className="mb-0 mt-2 font-italic">
-                    { quote.quote }
+                    {quote && <p className="random-quote">{quote.quote}</p>}
                   </p>
                   <footer className="blockquote-footer pt-4 mt-4 border-top">
                     From 
-                    <cite title="Source Title"> { quote.book }</cite>
+                    <cite title="Source Title"> { quote.play }</cite>
                   </footer>
                 </MDBTypography>
               </MDBCardBody>
             </MDBCard>
-            <button onClick={ generateQuote }>Generate new quote</button>
+            <button className="random-quote-button" onClick={generateQuote}>Generate Random Quote</button>
           </MDBCol>
         </MDBRow>
       </MDBContainer>
     </section>
   )
-}
+};
 
-export default Quote
+export default Quote;
