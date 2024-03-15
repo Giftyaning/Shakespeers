@@ -14,3 +14,27 @@
   top: -40px;
   left: 19px;
   }
+
+  .random-quote-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .random-quote-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .random-quote-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .random-quote {
+    margin-top: 20px;
+    font-style: italic;
+    font-size: 18px;
+  }
