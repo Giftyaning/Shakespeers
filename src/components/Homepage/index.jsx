@@ -29,7 +29,7 @@ function Homepage() {
     <div>
     <h1></h1>
     <textarea rows="1" cols="50">
-Enter your name here...
+Enter your name here....
 </textarea>
     </div>
 
@@ -38,7 +38,7 @@ Enter your name here...
       </div>
 
     <button> See My Saved Quotes</button>
-</div>
+</div> 
   )
 }
 
