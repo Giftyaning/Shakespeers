@@ -1,14 +1,26 @@
-.container {
+.homepageContainer {    padding-top: 100px;
     background-color: #ff914d;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-button {
+
+.buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .seeQuotesButton {
     background-color: #769f67;
-    text-decoration-color: azure;
+    margin-top: 20px;
+  }
+  
+
+.welcomeMessage {
+text-align: center;
 }
 
-/* Dropdown Button */
 .dropbtn {
     background-color: #fafafa;
     color: rgb(12, 12, 12);
@@ -65,3 +77,11 @@ button {
     width: 70px;
 }
 
+.tutorial {
+    margin-top: 20px;
+}
+
+.dropbtn {
+
+    width: 500px;
+}

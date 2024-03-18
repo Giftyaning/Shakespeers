@@ -7,11 +7,11 @@ import './style.css'
 function Homepage() {
   return (
 
-<div className="container">
+<div className="homepageContainer">
     <div>
     <img src="./src/assets/happ-speare.png" className="logoFace"></img>
     <img src="./src/assets/logo.png" className="logoText"></img>
-      <p>Welcome to the ShakesPeers revision App</p>
+      <p className="welcomeMessage"> Find inspiring quotes instantly to boost your studies or brighten your day. <br /> Just click to uncover timeless wisdom from the legendary playwright himself.</p>
     </div>
 
     <div>
@@ -34,10 +34,14 @@ Enter your name here....
     </div>
 
     <div>    
-      <h3>Watch the Tutorial here</h3> 
+      <img className="tutorial" src="./src/assets/Videotutorial.jpg"></img>
       </div>
 
-    <button> See My Saved Quotes</button>
+      <div className="buttonContainer">
+        <button className="seeQuotesButton">See My Saved Quotes</button>
+      </div>
+
+
 </div> 
   )
 }
