@@ -13,9 +13,10 @@
 * Once the user has completed their ideas (or not), they can enter both their own email and the email of a peer or teacher to forward their answers to
 
 ## Links
-Respository Link
+Respository Link:
 https://github.com/Giftyaning/Project-2 <br>
-Live Page Link
+Live Page Link: 
+https://shakespeers.netlify.app
 
 ## Images
 ![Alt Logo](./logo.png)
