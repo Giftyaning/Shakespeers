@@ -16,22 +16,45 @@ import {
 
 const Quote = () => {
   // Generate PDF
-  function generatePDF(responses) {
+  function generatePDF(responses, quote) {
     const doc = new jsPDF();
-    //     var image = .../happ-sp // Work in progress
-    // doc.addImage(image, 'JPEG', 15, 40, 180, 160); // Add image to the PDF
+    const maxWidth = 180;
+    const answer1 = responses.contextualDetails;
+    const answer2 = responses.literaryFeatures;
+    const answer3 = responses.authorialIntent;
+
     doc.setTextColor(0, 0, 255);
-    doc.setFontSize(15);
-    doc.text("Please find below your responses", 10, 20);
+    doc.setFontSize(12);
+    doc.text(
+      "Please find below your responses to the play " + quote.play,
+      10,
+      20
+    );
 
-    doc.text("Key Contextual Details", 10, 40);
-    doc.text(responses.contextualDetails, 10, 50);
+    const lines1 = doc.splitTextToSize(answer1, maxWidth);
+    doc.text("Contextual Details", 10, 40);
+    let y = 50;
 
-    doc.text("Literary Features", 10, 70);
-    doc.text(responses.literaryFeatures, 10, 80);
-    
-    doc.text("Authorial Intent", 10, 100);
-    doc.text(responses.authorialIntent, 10, 110);
+    for (let i = 0; i < lines1.length; i++) {
+      doc.text(10, y, lines1[i]);
+      y += 10;
+    }
+    y += 10;
+    doc.text("Literary Features", 10, y);
+    const lines2 = doc.splitTextToSize(answer2, maxWidth);
+    y += 10;
+    for (let i = 0; i < lines2.length; i++) {
+      doc.text(10, y, lines2[i]);
+      y += 10;
+    }
+    y += 10;
+    doc.text("Authorial Intent", 10, y);
+    const lines3 = doc.splitTextToSize(answer3, maxWidth);
+    y += 10;
+    for (let i = 0; i < lines3.length; i++) {
+      doc.text(10, y, lines3[i]);
+      y += 10;
+    }
 
     doc.save("Shakespeers.pdf");
   }
@@ -170,7 +193,7 @@ const Quote = () => {
           <MDBCol sm="9" className="d-flex justify-content-between">
             <button
               className="random-quote-button bg-light text-dark"
-              onClick={() => generatePDF(responses)}
+              onClick={() => generatePDF(responses, quote)}
             >
               Generate PDF
             </button>
