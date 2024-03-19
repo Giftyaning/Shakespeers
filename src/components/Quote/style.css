@@ -38,3 +38,13 @@
     font-style: italic;
     font-size: 18px;
   }
+
+  .text-group {
+    position: relative;
+  }
+
+  .help-btn {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+  }

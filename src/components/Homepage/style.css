@@ -1,6 +1,11 @@
-.container {
-    background-color: #ff914d;
 
+.home-container {
+    background-color: var(--primary);
+    height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 button {
@@ -22,7 +27,6 @@ button {
     position: relative;
     display: inline-block;
   }
-  
 
   .dropdown-content {
     display: none;
@@ -56,12 +60,52 @@ button {
 }
 
 .logoText{
-    height: 70px;
-    width: 500px;
+    height: 50px;
+    width: auto;
 }
 
 .logoFace{
     height: 70px;
-    width: 70px;
+    width: auto;
 }
 
+/* Card */
+.home-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    max-width: 800px!important;
+    padding: 3rem;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.branding {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+label {
+    width: 100%
+}
+
+select {
+    height: 35px;
+    margin-right: 10px;
+}
+
+.btn {
+    padding: 7px 23px;
+    font-size: 14px;
+}
+
+.tutorial-box {
+    height: 110px;
+    width: 220px;
+    margin: auto;
+    background-color: grey;
+}
