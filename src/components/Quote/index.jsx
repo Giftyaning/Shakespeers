@@ -1,4 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
+import { jsPDF } from "jspdf"
+import { useNavigate } from "react-router-dom"
+import { globalCurrentPlay } from '../../contexts/globalCurrentPlay'
 import plays from '../../data/plays.js'
 import './style.css'
 import {
@@ -9,64 +12,119 @@ import {
   MDBIcon,
   MDBRow,
   MDBTypography,
-} from "mdb-react-ui-kit";
-
-
+} from "mdb-react-ui-kit"
 
 const Quote = () => {
-  const [quote, setQuote] = useState('');
+  // Generate PDF
+  function generatePDF() {
+    const doc = new jsPDF();
+    doc.text("Hello world!", 10, 10)
+    doc.save("a4.pdf")
+  } 
 
-  const generateQuote = () => {
-    if (plays.length === 0) {
-      console.error('No plays data available.');
-      return;
-    }
+  // Initialise navigation functionality
+  const navigate = useNavigate()
 
-    const randomPlayIndex = Math.floor(Math.random() * plays.length);
-    const randomPlay = plays[randomPlayIndex];
-    const randomPlayName = randomPlay.name
+  // Retrieve global context items
+  const { 
+    localData, 
+    handleLocalData, 
+    quote, 
+    setQuote, 
+    responses, 
+    setResponses, 
+    saveResponses, 
+    generateQuote, 
+    loadResponses
+  } = useContext(globalCurrentPlay)
 
-    if (!randomPlay.quotes || randomPlay.quotes.length === 0) {
-      console.error('No quotes available for the selected play.');
-      return;
-    }
-
-    const randomQuoteIndex = Math.floor(Math.random() * randomPlay.quotes.length);
-    const selectedQuote = randomPlay.quotes[randomQuoteIndex];
-    setQuote({
-      "quote":selectedQuote,
-      "play":randomPlayName
-    });
-        };
+  // Generate quote on page load
+  useEffect(() => {
+    generateQuote()
+  }, [])
 
 
   return (
-    <section className="vh-100" style={{ backgroundColor: "#f5f7fa" }}>
+    <section className="vh-100" style={{ backgroundColor: "var(--primary)" }}>
       <MDBContainer className="py-5 h-100">
         <MDBRow className="justify-content-center align-items-center h-100">
-          <MDBCol md="9" lg="7" xl="5">
+          <MDBCol sm="9">
             <MDBCard>
               <MDBCardBody>
                 <MDBTypography
                   blockquote
                   className="blockquote-custom bg-white px-3 pt-4"
                 >
-                  <div className="blockquote-custom-icon bg-info shadow-1-strong">
+                  <div className="blockquote-custom-icon shadow-1-strong" style={{ backgroundColor: "var(--secondary)" }}> 
                     <MDBIcon fas icon="quote-left text-white" />
                   </div>
-                  <p className="mb-0 mt-2 font-italic">
-                    {quote && <p className="random-quote">{quote.quote}</p>}
-                  </p>
+                    {quote && <p className="random-quote">{quote && quote.quote}</p>}
                   <footer className="blockquote-footer pt-4 mt-4 border-top">
                     From 
-                    <cite title="Source Title"> { quote.play }</cite>
+                    <cite title="Source Title"> { quote && quote.play }</cite>
                   </footer>
                 </MDBTypography>
               </MDBCardBody>
             </MDBCard>
-            <button className="random-quote-button" onClick={generateQuote}>Generate Random Quote</button>
           </MDBCol>
+
+          <MDBCol sm="9" className="d-flex justify-content-between">
+            <MDBCard style={{width: '100%'}}>
+              <MDBCardBody style={{width: '100%'}}>
+                <form>
+                  <fieldset>
+                    <h3>Your Responses</h3>
+
+                    <div className="form-group">
+                      <label className="control-label" htmlFor="contextual">Key Contextual Details</label>
+                      <div className="text-group">                     
+                        <textarea 
+                          className="form-control" id="contextual" name="contextual" 
+                          onChange={ e => setResponses({...responses, 'contextualDetails': e.target.value})}
+                          value= { responses.contextualDetails }
+                        ></textarea>
+                        <button className="btn rounded-pill bg-primary text-light help-btn"><i className="fa-solid fa-question"></i></button>
+                      </div>
+                    </div>
+
+                    <div className="form-group">
+                      <label className="control-label" htmlFor="literary">Literary Features</label>
+                      <div className="text-group">                     
+                        <textarea 
+                          className="form-control" id="literary" name="literary" 
+                          onChange={ e => setResponses({...responses, 'literaryFeatures': e.target.value})}
+                          value= { responses.literaryFeatures }
+                        ></textarea>
+                        <button className="btn rounded-pill bg-primary text-light help-btn"><i className="fa-solid fa-question"></i></button>
+                      </div>
+                    </div>
+
+                    <div className="form-group">
+                      <label className="control-label" htmlFor="authorial">Authorial Intent</label>
+                      <div className="text-group">    
+                        <textarea 
+                          className="form-control" id="authorial" name="authorial" 
+                          onChange={ e => setResponses({...responses, 'authorialIntent': e.target.value})}
+                          value= { responses.authorialIntent }
+                        ></textarea>
+                        <button className="btn rounded-pill bg-primary text-light help-btn"><i className="fa-solid fa-question"></i></button>
+                      </div>
+                    </div>
+
+                  </fieldset>
+                </form>
+              </MDBCardBody>
+            </MDBCard>
+          </MDBCol>
+
+          <MDBCol sm="9" className="d-flex justify-content-between">
+            <button className="random-quote-button bg-light text-dark" onClick={() => generatePDF()}>Generate PDF</button>
+            <button className="random-quote-button bg-light text-dark" onClick={saveResponses}>Save Responses</button>
+            <button className="random-quote-button bg-light text-dark" onClick={() => generateQuote()}>Next Quote</button>
+          </MDBCol>
+
         </MDBRow>
+
       </MDBContainer>
     </section>
   )

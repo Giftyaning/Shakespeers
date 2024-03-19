@@ -1,17 +1,19 @@
 import { useState } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import './App.css'
-import Quote from './components/Quote/index.jsx'
-import Homepage from './components/Homepage/index.jsx'
+import Quotes from './pages/Quotes'
+import Home from './pages/Home'
 
 
 function App() {
 
   return (
-    <>
-      <Homepage/>
-      <Quote/>
-    </>
+    <Router>
+      <Routes>
+        <Route path="*" element={<Home/>} />
+        <Route path="/quotes" element={<Quotes/>} />
+      </Routes>
+    </Router>
   )
 }
 

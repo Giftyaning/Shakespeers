@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #ff914d;
+  --secondary: #c45f26;
+  --mdb-primary-rgb: 255, 145, 77;
+}
+
+.btn-primary {
+  background-color: var(--primary)!important;
+}
