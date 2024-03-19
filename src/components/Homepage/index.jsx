@@ -36,7 +36,7 @@ function Homepage() {
     <div className="container-fluid home-container">
       <div className="container home-card">
         <div className="branding">
-          <img src="./src/assets/happ-speare.png" className="logoFace"></img>
+          <img src="https://github.com/Giftyaning/Shakespeers/blob/main/src/assets/happ-speare.png" className="logoFace"></img>
           <img src="./src/assets/shakespeers-logo-black.png" className="logoText"></img>
         </div>
         <div>
