@@ -3,7 +3,8 @@ import { jsPDF } from "jspdf";
 import { useNavigate } from "react-router-dom";
 import { globalCurrentPlay } from "../../contexts/globalCurrentPlay";
 // import { Toast } from "bootstrap";
-import toast, { Toaster } from "react-hot-toast";
+import toast, {Toaster} from "react-hot-toast";
+import { helpData } from "../../data/helpdata.js";
 import plays from "../../data/plays.js";
 import "./style.css";
 import {
@@ -78,6 +79,15 @@ const Quote = () => {
     loadResponses,
   } = useContext(globalCurrentPlay);
 
+  // Function to select a random fact
+  const selectRandomFact = () => {
+    const { facts } = helpData[0]; // Assuming you have only one object in the helpData array
+    const randomIndex = Math.floor(Math.random() * facts.length);
+    const selectedFact = facts[randomIndex];
+    setToastMessage(selectedFact); // Set the selected fact as the toast message
+    toast.success(selectedFact); // Display the selected fact as a toast
+  };
+
   // Generate quote on page load
   useEffect(() => {
     generateQuote();
@@ -137,45 +147,12 @@ const Quote = () => {
                           }
                           value={responses.contextualDetails}
                         ></textarea>
-                        <button type="button" onClick={()=>{
-                          toast.custom((t) => (
-                            <div
-                              className={`${
-                                t.visible ? 'animate-enter' : 'animate-leave'
-                              } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
-                            >
-                              <div className="flex-1 w-0 p-4">
-                                <div className="flex items-start">
-                                  <div className="flex-shrink-0 pt-0.5">
-                                    <img
-                                      id="happy"
-                                      className="h-10 w-10 rounded-full"
-                                      src="https://github.com/Giftyaning/Shakespeers/blob/main/src/assets/happ-speare.png?raw=true">
-                                    </img>
-                                  </div>
-                                  <div className="ml-3 flex-1">
-                                    <p className="text-sm font-medium text-gray-900">
-                                      Contextual Details
-                                    </p>
-                                    <p className="mt-1 text-sm text-gray-500">
-                                      Sure! 8:30pm works great!
-                                    </p>
-                                  </div>
-                                </div>
-                                <div className="flex border-l border-gray-200">
-                                  <button
-                                    onClick={() => toast.dismiss(t.id)}
-                                    className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                                  >
-                                    Close
-                                  </button>
-                                </div>
-                              </div>
-                            ));
-                          }}
+                        <button
+                          type="button"
+                          onClick={selectRandomFact}
                           className="btn rounded-pill bg-primary text-light help-btn"
                         >
-                          <i className="fa-solid fa-question"></i>
+                        <i className="fa-solid fa-question"></i>
                         </button>
                       </div>
                     </div>
@@ -197,46 +174,14 @@ const Quote = () => {
                           }
                           value={responses.literaryFeatures}
                         ></textarea>
-                        <button type="button" onClick={()=>{
-                          toast.custom((t) => (
-                            <div
-                              className={`${
-                                t.visible ? 'animate-enter' : 'animate-leave'
-                              } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
-                            >
-                              <div className="flex-1 w-0 p-4">
-                                <div className="flex items-start">
-                                  <div className="flex-shrink-0 pt-0.5">
-                                    <img
-                                      id="happy"
-                                      className="h-10 w-10 rounded-full"
-                                      src="https://github.com/Giftyaning/Shakespeers/blob/main/src/assets/happ-speare.png?raw=true">
-                                    </img>
-                                  </div>
-                                  <div className="ml-3 flex-1">
-                                    <p className="text-sm font-medium text-gray-900">
-                                      Literary Features
-                                    </p>
-                                    <p className="mt-1 text-sm text-gray-500">
-                                      Sure! 8:30pm works great!
-                                    </p>
-                                  </div>
-                                </div>
-                                <div className="flex border-l border-gray-200">
-                                  <button
-                                    onClick={() => toast.dismiss(t.id)}
-                                    className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                                  >
-                                    Close
-                                  </button>
-                                </div>
-                              </div>
-                            ));
-                          }}
+                        <button
+                          type="button"
+                          onClick={selectRandomFact}
                           className="btn rounded-pill bg-primary text-light help-btn"
                         >
-                          <i className="fa-solid fa-question"></i>
+                        <i className="fa-solid fa-question"></i>
                         </button>
+
                       </div>
                     </div>
 
@@ -257,45 +202,12 @@ const Quote = () => {
                           }
                           value={responses.authorialIntent}
                         ></textarea>
-                        <button type="button" onClick={()=>{
-                          toast.custom((t) => (
-                            <div
-                              className={`${
-                                t.visible ? 'animate-enter' : 'animate-leave'
-                              } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
-                            >
-                              <div className="flex-1 w-0 p-4">
-                                <div className="flex items-start">
-                                  <div className="flex-shrink-0 pt-0.5">
-                                    <img
-                                      id="happy"
-                                      className="h-10 w-10 rounded-full"
-                                      src="https://github.com/Giftyaning/Shakespeers/blob/main/src/assets/happ-speare.png?raw=true">
-                                    </img>
-                                  </div>
-                                  <div className="ml-3 flex-1">
-                                    <p className="text-sm font-medium text-gray-900">
-                                      Authorial Intent
-                                    </p>
-                                    <p className="mt-1 text-sm text-gray-500">
-                                      Sure! 8:30pm works great!
-                                    </p>
-                                  </div>
-                                </div>
-                                <div className="flex border-l border-gray-200">
-                                  <button
-                                    onClick={() => toast.dismiss(t.id)}
-                                    className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                                  >
-                                    Close
-                                  </button>
-                                </div>
-                              </div>
-                            ));
-                          }}
+                        <button
+                          type="button"
+                          onClick={selectRandomFact}
                           className="btn rounded-pill bg-primary text-light help-btn"
                         >
-                          <i className="fa-solid fa-question"></i>
+                        <i className="fa-solid fa-question"></i>
                         </button>
                       </div>
                     </div>
