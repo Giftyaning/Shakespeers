@@ -79,6 +79,9 @@ button {
     padding: 3rem;
     text-align: center;
     border-radius: 25px;
+    font-family: "MedievalSharp", cursive;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .branding {
@@ -111,4 +114,12 @@ select, input {
     width: 220px;
     margin: auto;
     background-color: grey;
+}
+
+.welcome {
+    font-size: 2rem;
+}
+
+.instructions {
+    font-size: 1.5rem;
 }

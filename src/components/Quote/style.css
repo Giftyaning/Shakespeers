@@ -54,3 +54,9 @@
     width: 50px;
 
   }
+
+  .card-body {
+    font-family: "MedievalSharp", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
