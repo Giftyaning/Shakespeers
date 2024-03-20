@@ -4,9 +4,6 @@ import { globalCurrentPlay } from '../../contexts/globalCurrentPlay'
 import plays from '../../data/plays.js'
 import './style.css'
 
-
-
-
 function Homepage() {
   // Initialise navigation functionality
   const navigate = useNavigate()
