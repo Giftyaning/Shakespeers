@@ -1,0 +1,17 @@
+.navbar-left {
+  padding: 2rem;
+}
+
+ul, li {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  cursor: pointer;
+}
+
+li {
+  background-color: rgb(255, 249, 240);
+  padding: 5px 20px 5px 20px;
+}

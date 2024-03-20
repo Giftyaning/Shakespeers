@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react'
 import plays from '../../data/plays.js'
 import { globalCurrentPlay } from '../../contexts/globalCurrentPlay'
 import { useNavigate } from "react-router-dom";
+import './style.css'
 
 const Navbar = () => {
   // Initialise navigation functionality
@@ -13,6 +14,7 @@ const Navbar = () => {
     handleLocalData, 
     quote, 
     setQuote, 
+    name,
     responses, 
     setResponses, 
     saveResponses, 
@@ -70,10 +72,11 @@ const Navbar = () => {
   })
 
   return (
-    <section className="d-flex flex-column justify-content-between">
+    <section className="d-flex flex-column justify-content-between navbar-left">
       <button className="random-quote-button bg-primary text-light" onClick={() => navigate('/')}>Homepage</button>
       <div>
-        <h3> My Quotes</h3>
+        <h3>{ name?.name ? name.name + "'s Quotes" : "My Quotes"}</h3>
+        <hr></hr>
         <div>
           { playList }
         </div>
