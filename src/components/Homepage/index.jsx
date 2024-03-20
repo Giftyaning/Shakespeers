@@ -53,7 +53,11 @@ function Homepage() {
         </div>
       <div className="container home-card">
         <div>
-          <p>Welcome to the ShakesPeers revision App</p>
+          <p className="welcome"><strong>Welcome to the ShakesPeers Revision App</strong></p>
+          <p className="instructions">choose a play<br></br> 
+          read random quote<br></br>
+          show your knowledge<br></br>
+          share with peers</p>
         </div>
         
         <div>

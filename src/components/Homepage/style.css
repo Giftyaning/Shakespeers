@@ -115,3 +115,11 @@ select, input {
     margin: auto;
     background-color: grey;
 }
+
+.welcome {
+    font-size: 2rem;
+}
+
+.instructions {
+    font-size: 1.5rem;
+}
