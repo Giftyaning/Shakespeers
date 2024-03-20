@@ -1,16 +1,12 @@
-# Project 2 - Shakes-peer
+# Shakespeers
 ![Github licence](https://img.shields.io/badge/your_licence:-MIT-blue.svg)
-## User Story (temporary)
-* Users load the page
-* Users are given option to select a Shakespeare play from a dropdown list (rules of how to use the site also on landing page)
-* On click - a random quotation from chosen play is generated in nice, readable card
-* Users are prompted to fill in boxes with their knowledge on the following areas, in relation to the quotation:
-        * Key contextual details
-        * Literary Features (within the randomly selected lines)
-        * Shakespeare's Authorial Intent
-        * Themes
-* The user can click on a 'help me' button for each of the above - a randomly generated fact will appear to support them (the user will be told that the generated facts may or not relate to their quotation - they can keep clicking until they know the fact is useful)
-* Once the user has completed their ideas (or not), they can enter both their own email and the email of a peer or teacher to forward their answers to
+
+## User Story
+
+
+*AS a student preparing for literature exams,
+I WANT an app that helps me revise Shakespearean plays
+SO that I can understand and remember key quotes more effectively.
 
 ## Links
 Respository Link:
@@ -21,26 +17,67 @@ https://shakespeers.netlify.app
 ## Images
 ![Alt Logo](./logo.png)
 ![Alt Happy Shakespeare](./happ-speare.png)
+
 ## Table of Contents
 * [Installation](#installation)
-* [Useage](#useage)
+* [Usage](#usage)
 * [Licence](#licence)
-* [Contributions](#contributors)
-* [Testing](#tests)
-* [Questions](#questions)
+* [Contributions](#contributions)
+
+
 ## Installation
 N/A
-## Useage
-N/A
-## Licence
-Your application is licenced under: MIT
+
+## Usage
+
+* Select a Shakespeare play from the dropdown list.
+* Enter your name.
+* A random quotation from your chosen play will be displayed.
+* Fill in the 3 revision questions with your knowledge on the following areas, in relation to the quotation:
+
+         Key contextual details
+
+         Literary Features (within the randomly selected lines)
+
+         Shakespeare's Authorial Intent
+        
+* By clicking on the 'help me' button for each of the above - a random generated fact will appear.
+* Once completed you can save your answers as a PDF by selecting the 'Generate PDF' button.
+* You can save your responces by selecting the 'Save responces' button. Saved responces will be saved on the left hand side of the screen. 
+* Selecting the 'Next quote' button will generate a new quote.
+
 ## Contributions
-N/A
-## Tests
-N/A
-## Questions
-N/A
+Rory Simmonds
+
+Luke Holliday
+
+Kanika Aggarwal
+
+Gifty Aning
+
+Teannie Binns
+
 
 ## Licence
 
-MIT Licence
+Copyright (c) [2024] [Shakespeers]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---

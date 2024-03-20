@@ -22,6 +22,11 @@ const GlobalContext = ({ children }) => {
     'index': ''
   })
 
+  // State variable for storing name
+  const [ name, setName ] = useState({
+    'name': ''
+  })
+
   // State variables for temporarily storing responses
   const [responses, setResponses] = useState({})
 
@@ -151,6 +156,8 @@ const GlobalContext = ({ children }) => {
     handleLocalData,
     quote,
     setQuote,
+    name,
+    setName,
     responses,
     setResponses,
     saveResponses,
