@@ -33,8 +33,8 @@ function Homepage() {
     <div className="container-fluid home-container">
       <div className="container home-card">
         <div className="branding">
-          <img src="https://github.com/Giftyaning/Shakespeers/blob/main/src/assets/happ-speare.png" className="logoFace"></img>
-          <img src="./src/assets/shakespeers-logo-black.png" className="logoText"></img>
+          <img src="https://github.com/Giftyaning/Shakespeers/blob/main/src/assets/happ-speare.png?raw=true" className="logoFace"></img>
+          <img src="https://github.com/Giftyaning/Shakespeers/blob/main/src/assets/shakespeers-logo-black.png?raw=true" className="logoText"></img>
         </div>
         <div>
           <p>Welcome to the ShakesPeers revision App</p>
