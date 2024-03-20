@@ -29,9 +29,7 @@ const Quote = () => {
     doc.setTextColor(0, 0, 255);
     doc.setFontSize(12);
     doc.text(
-      "Please find below your responses to the play " + quote.play,
-      10,
-      20
+      "Please find below your responses to the play " + quote.play, 10,20
     );
 
     const lines1 = doc.splitTextToSize(answer1, maxWidth);
@@ -59,13 +57,11 @@ const Quote = () => {
       y += 10;
     }
 
-    doc.save("Shakespeers.pdf");
+    doc.save(`Shakespeers ${quote.play} Answers.pdf`);
   }
 
-
   // help button
-  const [toastMessage, setToastMessage] = useState('');
-  
+  const [toastMessage, setToastMessage] = useState("");
 
   // Initialise navigation functionality
   const navigate = useNavigate();
