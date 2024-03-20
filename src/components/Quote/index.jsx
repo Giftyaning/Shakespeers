@@ -154,7 +154,7 @@ const Quote = () => {
                                     <img
                                       id="happy"
                                       className="h-10 w-10 rounded-full"
-                                      src="./src/assets/happ-speare.png">
+                                      src="https://github.com/Giftyaning/Shakespeers/blob/main/src/assets/happ-speare.png?raw=true">
                                     </img>
                                   </div>
                                   <div className="ml-3 flex-1">
@@ -213,7 +213,7 @@ const Quote = () => {
                                     <img
                                       id="happy"
                                       className="h-10 w-10 rounded-full"
-                                      src="./src/assets/happ-speare.png">
+                                      src="https://github.com/Giftyaning/Shakespeers/blob/main/src/assets/happ-speare.png?raw=true">
                                     </img>
                                   </div>
                                   <div className="ml-3 flex-1">
@@ -272,7 +272,7 @@ const Quote = () => {
                                     <img
                                       id="happy"
                                       className="h-10 w-10 rounded-full"
-                                      src="./src/assets/happ-speare.png">
+                                      src="https://github.com/Giftyaning/Shakespeers/blob/main/src/assets/happ-speare.png?raw=true">
                                     </img>
                                   </div>
                                   <div className="ml-3 flex-1">
