@@ -89,7 +89,7 @@ function Homepage() {
 
         <div>
           <label>Watch the Tutorial here</label> 
-          <div className="tutorial-box"></div>
+          <iframe width="340" height="160" src="https://www.youtube.com/embed/9vPi5o02tM0?si=xqQdw-H7natpC51D" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
 
         <div>
