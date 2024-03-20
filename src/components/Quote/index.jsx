@@ -79,13 +79,31 @@ const Quote = () => {
     loadResponses,
   } = useContext(globalCurrentPlay);
 
-  // Function to select a random fact
-  const selectRandomFact = () => {
-    const { facts } = helpData[0]; // Assuming you have only one object in the helpData array
+   // Function to select a random fact from the Contextual Details object in helpData
+   const selectContextFact = () => {
+    const { facts } = helpData[0];
     const randomIndex = Math.floor(Math.random() * facts.length);
     const selectedFact = facts[randomIndex];
-    setToastMessage(selectedFact); // Set the selected fact as the toast message
-    toast.success(selectedFact); // Display the selected fact as a toast
+    setToastMessage(selectedFact);
+    toast.success(selectedFact);
+  };
+
+  // Function to select a random fact from the Literary Features object in helpData
+  const selectLiteraryFact = () => {
+    const { facts } = helpData[1];
+    const randomIndex = Math.floor(Math.random() * facts.length);
+    const selectedFact = facts[randomIndex];
+    setToastMessage(selectedFact);
+    toast.success(selectedFact);
+  };
+
+  // Function to select a random fact from the Authorial Intent object in helpData
+  const selectAuthorialFact = () => {
+    const { facts } = helpData[2];
+    const randomIndex = Math.floor(Math.random() * facts.length);
+    const selectedFact = facts[randomIndex];
+    setToastMessage(selectedFact);
+    toast.success(selectedFact);
   };
 
   // Generate quote on page load
@@ -149,7 +167,7 @@ const Quote = () => {
                         ></textarea>
                         <button
                           type="button"
-                          onClick={selectRandomFact}
+                          onClick={selectContextFact}
                           className="btn rounded-pill bg-primary text-light help-btn"
                         >
                         <i className="fa-solid fa-question"></i>
@@ -176,7 +194,7 @@ const Quote = () => {
                         ></textarea>
                         <button
                           type="button"
-                          onClick={selectRandomFact}
+                          onClick={selectLiteraryFact}
                           className="btn rounded-pill bg-primary text-light help-btn"
                         >
                         <i className="fa-solid fa-question"></i>
@@ -204,7 +222,7 @@ const Quote = () => {
                         ></textarea>
                         <button
                           type="button"
-                          onClick={selectRandomFact}
+                          onClick={selectAuthorialFact}
                           className="btn rounded-pill bg-primary text-light help-btn"
                         >
                         <i className="fa-solid fa-question"></i>
