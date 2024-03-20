@@ -3,7 +3,7 @@ import { jsPDF } from "jspdf";
 import { useNavigate } from "react-router-dom";
 import { globalCurrentPlay } from "../../contexts/globalCurrentPlay";
 // import { Toast } from "bootstrap";
-import toast, {Toaster} from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import plays from "../../data/plays.js";
 import "./style.css";
 import {
@@ -28,9 +28,7 @@ const Quote = () => {
     doc.setTextColor(0, 0, 255);
     doc.setFontSize(12);
     doc.text(
-      "Please find below your responses to the play " + quote.play,
-      10,
-      20
+      "Please find below your responses to the play " + quote.play, 10,20
     );
 
     const lines1 = doc.splitTextToSize(answer1, maxWidth);
@@ -58,13 +56,11 @@ const Quote = () => {
       y += 10;
     }
 
-    doc.save("Shakespeers.pdf");
+    doc.save(`Shakespeers ${quote.play} Answers.pdf`);
   }
 
-
   // help button
-  const [toastMessage, setToastMessage] = useState('');
-  
+  const [toastMessage, setToastMessage] = useState("");
 
   // Initialise navigation functionality
   const navigate = useNavigate();
@@ -166,18 +162,19 @@ const Quote = () => {
                                     </p>
                                   </div>
                                 </div>
+                                <div className="flex border-l border-gray-200">
+                                  <button
+                                    onClick={() => toast.dismiss(t.id)}
+                                    className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                  >
+                                    Close
+                                  </button>
+                                </div>
                               </div>
-                              <div className="flex border-l border-gray-200">
-                                <button
-                                  onClick={() => toast.dismiss(t.id)}
-                                  className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                                >
-                                  Close
-                                </button>
-                              </div>
-                            </div>
-                          ))
-                        } } className="btn rounded-pill bg-primary text-light help-btn">
+                            ));
+                          }}
+                          className="btn rounded-pill bg-primary text-light help-btn"
+                        >
                           <i className="fa-solid fa-question"></i>
                         </button>
                       </div>
@@ -225,18 +222,19 @@ const Quote = () => {
                                     </p>
                                   </div>
                                 </div>
+                                <div className="flex border-l border-gray-200">
+                                  <button
+                                    onClick={() => toast.dismiss(t.id)}
+                                    className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                  >
+                                    Close
+                                  </button>
+                                </div>
                               </div>
-                              <div className="flex border-l border-gray-200">
-                                <button
-                                  onClick={() => toast.dismiss(t.id)}
-                                  className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                                >
-                                  Close
-                                </button>
-                              </div>
-                            </div>
-                          ))
-                        } } className="btn rounded-pill bg-primary text-light help-btn">
+                            ));
+                          }}
+                          className="btn rounded-pill bg-primary text-light help-btn"
+                        >
                           <i className="fa-solid fa-question"></i>
                         </button>
                       </div>
@@ -284,18 +282,19 @@ const Quote = () => {
                                     </p>
                                   </div>
                                 </div>
+                                <div className="flex border-l border-gray-200">
+                                  <button
+                                    onClick={() => toast.dismiss(t.id)}
+                                    className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                  >
+                                    Close
+                                  </button>
+                                </div>
                               </div>
-                              <div className="flex border-l border-gray-200">
-                                <button
-                                  onClick={() => toast.dismiss(t.id)}
-                                  className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                                >
-                                  Close
-                                </button>
-                              </div>
-                            </div>
-                          ))
-                        } } className="btn rounded-pill bg-primary text-light help-btn">
+                            ));
+                          }}
+                          className="btn rounded-pill bg-primary text-light help-btn"
+                        >
                           <i className="fa-solid fa-question"></i>
                         </button>
                       </div>
