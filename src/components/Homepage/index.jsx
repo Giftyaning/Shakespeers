@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
 import { globalCurrentPlay } from '../../contexts/globalCurrentPlay'
 import plays from '../../data/plays.js'
@@ -9,7 +9,22 @@ function Homepage() {
   const navigate = useNavigate()
 
   // Retrieve global context items
-  const { localData, handleLocalData } = useContext(globalCurrentPlay)
+  const { localData, handleLocalData, name, setName } = useContext(globalCurrentPlay)
+
+  // Temporary name
+  const [tempName, setTempName] = useState({
+    'name': ''
+  })
+
+  // Retrieve name from local storage if it exists
+  useEffect(() => {
+    if (localData.name) {
+      setName({
+        ...name,
+        'name': localData.name
+      })
+    }
+  }, []) 
 
   // Create list of options for plays from play.js file
   const playList = plays.map(play => <option value={ play.name } key={ play.name }>{ play.name }</option>)
@@ -21,6 +36,7 @@ function Homepage() {
     // Set global play context using selection
     const newLocalObj = {
       ...localData,
+      "name": tempName.name,
       "activePlaySearch": event.target[0].value
     }
     handleLocalData(newLocalObj)
@@ -39,6 +55,21 @@ function Homepage() {
         <div>
           <p>Welcome to the ShakesPeers revision App</p>
         </div>
+        
+        <div>
+          { name?.name ? 'Welcome back ' + name.name : 
+          <form>
+          <label htmlFor="name">Enter your name</label> 
+          <input type="text" id="name" placeholder="Your name" value={tempName.name} onChange={(e) =>
+            setTempName({
+              ...name,
+              'name': e.target.value
+            })}>
+          </input>
+        </form>
+        }
+          
+        </div>
 
         <div>
           <div className="dropdown">
@@ -53,17 +84,12 @@ function Homepage() {
         </div>
 
         <div>
-          <label htmlFor="name">Enter your name</label> 
-          <input type="text" id="name" placeholder="Your name"></input>
-        </div>
-
-        <div>
           <label>Watch the Tutorial here</label> 
           <div className="tutorial-box"></div>
         </div>
 
         <div>
-          <button className="btn bg-primary text-light">See My Saved Quotes</button>
+          <button className="btn bg-primary text-light" onClick={() => navigate('/quotes')}>See My Saved Quotes</button>
         </div>
       </div>
     </div> 
