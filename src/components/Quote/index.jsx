@@ -85,7 +85,9 @@ const Quote = () => {
     const randomIndex = Math.floor(Math.random() * facts.length);
     const selectedFact = facts[randomIndex];
     setToastMessage(selectedFact);
-    toast.success(selectedFact);
+    toast.success(selectedFact, { 
+      duration: 10000 
+    });
   };
 
   // Function to select a random fact from the Literary Features object in helpData
@@ -94,7 +96,9 @@ const Quote = () => {
     const randomIndex = Math.floor(Math.random() * facts.length);
     const selectedFact = facts[randomIndex];
     setToastMessage(selectedFact);
-    toast.success(selectedFact);
+    toast.success(selectedFact, { 
+      duration: 10000 
+    });
   };
 
   // Function to select a random fact from the Authorial Intent object in helpData
@@ -103,7 +107,9 @@ const Quote = () => {
     const randomIndex = Math.floor(Math.random() * facts.length);
     const selectedFact = facts[randomIndex];
     setToastMessage(selectedFact);
-    toast.success(selectedFact);
+    toast.success(selectedFact, { 
+      duration: 10000 
+    });
   };
 
   // Generate quote on page load
