@@ -61,7 +61,7 @@ function Homepage() {
         </div>
         
         <div>
-          { name?.name ? 'Welcome back ' + name.name : 
+          { name?.name ? 'Welcome Back ' + name.name : 
           <form>
           <label htmlFor="name">Enter your name</label> 
           <input type="text" id="name" placeholder="Your name" value={tempName.name} onChange={(e) =>
